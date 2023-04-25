@@ -1,0 +1,1150 @@
+/*#region fonts*/
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+/*#endregion fonts*/
+
+/*#region variables*/
+html {
+  --primary-green: #00A03B;
+  --background-grey: #F7F7F7;
+  --main-text-color: #000000;
+  --light-text-color: #8E8E8E;
+  --inputs-text: #555555;
+}
+/*#endregion variables*/
+
+/*#region normalizedCSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--main-text-color);
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+}
+/*#endregion normalizedCSS*/
+
+/*#region pageWrapper*/
+.visit_doors-page-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 100px;
+}
+/*#endregion pageWrapper*/
+
+/*#region breadcrums*/
+.visit_doors-breadcrumbs {
+  padding: 4px 0 4px 88px;
+  margin-bottom: 49px;
+  margin-left: auto;
+  width: 95%;
+  background-color: var(--background-grey);
+}
+
+.visit_doors-breadcrumbs a {
+  position: relative;
+  margin-right: 33px;
+  line-height: 31px;
+  color: var(--primary-green);
+}
+
+.visit_doors-breadcrumbs a:last-child {
+  margin-right: 0;
+}
+
+.visit_doors-breadcrumbs a:not(:last-child)::after {
+  content: url('./images/arrow__icon.svg');
+  position: absolute;
+  right: -17px;
+  top: 3px;
+}
+
+.visit_doors-breadcrumbs a:first-child::before {
+  content: url('./images/home__icon.svg');
+  position: absolute;
+  left: -20px;
+  top: 1px;
+}
+/*#endregion breadcrumbs*/
+
+/*#region mainInfo*/
+.visit_doors-main-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.visit_doors-main-info-photos {
+  width: 50%;
+  margin-right: 88px;
+}
+
+.visit_doors-main-info-main-photo-slider {
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.visit_doors-main-info-main-photo-slider-container {
+  display: flex;
+  height: 480px;
+
+  transition: transform 0.5s ease-in-out;
+}
+
+.visit_doors-main-info-main-photo-slider-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.visit_doors-main-info-main-photo-slider-slide img {
+  height: 480px;
+}
+
+.visit_doors-main-info-main-photo-slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 36px;
+  width: 36px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.visit_doors-main-info-main-photo-slider-button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed
+}
+
+.visit_doors-main-info-main-photo-slider-button-prev {
+  background-image: url('./images/slider__arrow-prev.svg');
+  left: 0;
+}
+
+.visit_doors-main-info-main-photo-slider-button-next {
+  background-image: url('./images/slider__arrow-next.svg');
+  right: 0;
+}
+
+.visit_doors-main-info-models-slider {
+  margin: 0 30px 30px 0;
+  padding-right: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.visit_doors-main-info-models-slider-container {
+  display: flex;
+  height: 195px;
+  padding-left: 30px;
+
+  transition: transform 0.5s ease-in-out;
+}
+
+.visit_doors-main-info-models-slider-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  padding: 0 4px
+}
+
+.visit_doors-main-info-models-slider-slide img {
+  height: 195px;
+}
+
+.visit_doors-main-info-models-slider-button {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+
+.visit_doors-main-info-models-slider-button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.visit_doors-main-info-models-slider-button-prev {
+  background-image: url('./images/slider__arrow-prev.svg');
+  left: 0;
+}
+
+.visit_doors-main-info-models-slider-button-next {
+  background-image: url('./images/slider__arrow-next.svg');
+  right: -5px;
+}
+
+.visit_doors-main-info-photos h2 {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 25px;
+}
+
+.visit_doors-main-info-photos-interier {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 10px;
+  margin-bottom: 30px;
+}
+
+.visit_doors-main-info-photos-interier img {
+  width: 100%;
+}
+
+.visit_doors-main-info-photos-call {
+  display: block;
+  padding: 10px 60px 12px;
+  font-weight: 500;
+  line-height: 24px;
+  background: rgba(253, 253, 253, 0.04);
+  border: 1px solid #8E8E8E;
+  border-radius: 10px;
+}
+
+.visit_doors-main-info-photos-call:first-child {
+  position: relative;
+  margin-bottom: 11px;
+}
+
+.visit_doors-main-info-photos-call:first-child::after {
+  content: url('./images/phone.svg');
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-40%);
+}
+
+.visit_doors-main-info-photos-call:last-child {
+  position: relative;
+  margin-bottom: 11px;
+}
+
+.visit_doors-main-info-photos-call:last-child::after {
+  content: url('./images/percent.svg');
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-40%);
+}
+ 
+.visit_doors-main-info-photos-call p:first-child {
+  font-size: 17px;
+}
+
+.visit_doors-main-info-photos-call p:last-child {
+  font-size: 12px;
+}
+/*#endregion mainInfo*/
+
+/*#region characteristics*/
+.visit_doors-main-info-general h1 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 25px;
+}
+
+.visit_doors-main-info-general-additional-info {
+  margin-bottom: 12px;
+}
+
+.visit_doors-main-info-general-additional-info p {
+  color: var(--light-text-color);
+}
+
+.visit_doors-main-info-general-prices {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.visit_doors-main-info-general-prices-wholesale {
+  margin-right: 25px;
+}
+
+.visit_doors-main-info-general-prices-wholesale p:first-child,
+.visit_doors-main-info-general-prices-retail p:first-child {
+  margin-bottom: 5px;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.visit_doors-main-info-general-prices-wholesale p:last-child,
+.visit_doors-main-info-general-prices-retail p:last-child {
+  margin-bottom: 10px;
+  font-size: 26px;
+  line-height: 24px;
+}
+
+.visit_doors-main-info-general-prices-wholesale p:last-child {
+  font-weight: 600;
+}
+
+.visit_doors-main-info-general-prices > p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.visit_doors-main-info-general-buttons {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.visit_doors-main-info-general-buttons-counter {
+  display: flex;
+  align-items: center;
+  margin-right: 33px;
+}
+
+.visit_doors-main-info-general-buttons-counter-button:first-child,
+.visit_doors-main-info-general-buttons-counter p {
+  margin-right: 45px;
+}
+
+.visit_doors-main-info-general-buttons-counter-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+}
+
+.visit_doors-main-info-general-buttons-counter-button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed
+}
+
+.visit_doors-main-info-general-buttons-counter p {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 24px;
+  color: var(--primary-green);
+}
+
+.visit_doors-main-info-general-buttons-buy,
+.visit_doors-main-info-general-buttons-quickly-buy {
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.visit_doors-main-info-general-buttons-buy {
+  padding: 10px 60px;
+  margin-right: 15px;
+  color: var(--background-grey);
+  background-color: var(--primary-green);
+}
+
+.visit_doors-main-info-general-buttons-quickly-buy {
+  padding: 10px;
+  border: 1px solid #E0E0E0;
+}
+
+.visit_doors-main-info-coatings {
+  padding: 0 12px;
+  height: 1065px;
+  overflow-y: scroll;
+}
+
+.visit_doors-main-info-coatings h2 {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 25px;
+}
+
+.visit_doors-main-info-general-coatings-variants-container {
+  margin-bottom: 30px;
+}
+
+.visit_doors-main-info-general-coatings-variants {
+  margin-bottom: 15px;
+}
+
+.visit_doors-main-info-general-coatings-variants p {
+  margin-bottom: 3px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.visit_doors-main-info-general-coatings-example {
+  display: grid;
+  grid-template-columns: repeat(3, 165px);
+  column-gap: 7px;
+  row-gap: 8px;
+}
+
+.visit_doors-main-info-general-coatings-example img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.visit_doors-main-info-general-coatings-example > label {
+  border: 1px solid #E0E0E0;
+}
+
+.visit_doors-main-info-general-coatings-example input {
+  display: none
+}
+
+.visit_doors-main-info-coatings-inputs-main {
+  margin-bottom: 30px;
+}
+
+.visit_doors-main-info-coatings-inputs-label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.visit_doors-main-info-coatings-inputs-label:last-child {
+  margin-bottom: 0;
+}
+
+.visit_doors-main-info-coatings-inputs-label-info-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.visit_doors-main-info-coatings-inputs-label-info-container img {
+  margin-right: 20px;
+}
+
+.visit_doors-main-info-coatings-inputs-label-info-container p {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.visit_doors-main-info-coatings-inputs select {
+  width: 100%;
+  padding: 6px 0 6px 12px;
+  font-size: 14px;
+  line-height: 26px;
+  color: var(--inputs-text)
+}
+
+.visit_doors-main-info-coatings-inputs-label-wrapper {
+  display: flex;
+}
+
+.visit_doors-main-info-coatings-inputs-label-radio {
+  display: flex;
+  align-items: center;
+}
+
+.visit_doors-main-info-coatings-inputs-label-radio:first-child {
+  margin-right: 25px;
+}
+
+.visit_doors-main-info-coatings-inputs-label-radio input {
+  margin-right: 10px;
+}
+/*#endregion characteristics*/
+
+/*#region decription*/
+.visit_doors-tab {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.visit_doors-tab-buttons {
+  position: relative;
+  top: 1.8px;
+}
+
+.visit_doors-tab-button-tab {
+  padding: 15px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--primary-green);
+}
+
+.visit_doors-tab-button-tab.active {
+  border: 1px solid var(--inputs-text);
+  border-bottom: none;
+  color: var(--inputs-text);
+  background-color: #fff;
+}
+
+.visit_doors-tab-content {
+  display: none;
+  padding: 30px;
+  border: 1px solid var(--inputs-text);
+}
+
+.visit_doors-tab-content.active {
+  display: block;
+}
+
+.visit_doors-tab-content-paragraph {
+  margin-bottom: 20px;
+}
+
+.visit_doors-tab-content-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.visit_doors-tab-content-paragraph h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 25px;
+}
+
+.visit_doors-tab-content-paragraph p {
+  margin-bottom: 5px;
+}
+
+.visit_doors-tab-content-images {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--light-text-color);
+}
+
+.visit_doors-tab-content-images-wrapper {
+  height: 100%;
+  flex-grow: 1;
+  flex-basis: 0;
+  align-items: stretch;
+  padding: 15px;
+  text-align: center;
+}
+
+.visit_doors-tab-content-images-wrapper:not(:first-child) {
+  border-left: 1px solid var(--inputs-text);
+}
+
+.visit_doors-tab-content-images-wrapper img {
+  margin-bottom: 5px;
+}
+
+.visit_doors-tab-content-paragraph ul {
+  margin-left: 30px;
+  list-style: disc;
+}
+
+.visit_doors-tab-content-paragraph ol {
+  margin-left: 30px;
+  list-style: decimal;
+}
+
+.visit_doors-tab-content table {
+  width: 100%;
+  border: 0.5px solid var(--light-text-color);
+  border-spacing: 0;
+}
+
+.visit_doors-tab-content td {
+  padding: 8px;
+  border: 0.5px solid var(--light-text-color);
+}
+/*#endregion description*/
+
+/*#region history*/
+.visit_doors-history-links {
+  margin-bottom: 30px;
+}
+
+.visit_doors-history-links a {
+  position: relative;
+  color: var(--primary-green);
+  padding: 3px;
+  margin-right: 5px;
+}
+
+.visit_doors-history-links a:last-child {
+  margin-right: 0;
+}
+
+.visit_doors-history-links a::after {
+  content: ", ";
+  position: absolute;
+  bottom: 3px;
+  right: -1px;
+}
+
+.visit_doors-history-links a:last-child::after {
+  display: none;
+}
+
+.visit_doors-history-decorator {
+  margin: 0 auto 30px;
+  width: max-content;
+  text-align: center;
+}
+
+.visit_doors-history-decorator h3 {
+  font-weight: 600;
+  font-size: 20px;
+  color: #00A03B;
+  margin-bottom: 10px;
+}
+
+.visit_doors-history-decorator img {
+  position: relative;
+}
+
+
+
+.visit_doors-history-slider-slide {
+  max-width: 285px;
+  padding: 10px;
+}
+
+.visit_doors-history-slider-slide-img-wrapper {
+  position: relative;
+}
+
+.visit_doors-history-slider-slide img {
+  width: max-content;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+}
+
+.visit_doors-history-slider-slide h4 {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.visit_doors-history-slider-slide-one-price {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.visit_doors-history-slider-slide-one-price p:first-child {
+  margin-bottom: 5px;
+}
+
+.visit_doors-history-slider-slide-one-price p:last-child {
+  font-size: 18px;
+}
+
+.visit_doors-history-slider-slide-wholesale {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.visit_doors-history-slider-slide-wholesale p:first-child {
+  margin-bottom: 5px;
+}
+
+.visit_doors-history-slider-slide-wholesale p:last-child {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+.visit_doors-history-slider-slide button {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--inputs-text);
+}
+
+.visit_doors-history-slider-slide button::after {
+  content: url('./images/cart.svg');
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+}
+
+.visit_doors-history-slider {
+  position: relative;
+  margin-bottom: 45px;
+  overflow: hidden;
+}
+
+.visit_doors-history-slider-container {
+  display: flex;
+  padding-left: 30px;
+  width: 900%;
+
+  transition: transform 0.5s ease-in-out;
+}
+
+.visit_doors-history-slider-button {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+
+.visit_doors-history-slider-button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.visit_doors-history-slider-button-prev {
+  background-image: url('./images/slider__arrow-prev.svg');
+  left: -5px;
+}
+
+.visit_doors-history-slider-button-next {
+  background-image: url('./images/slider__arrow-next.svg');
+  right: 0;
+}
+
+/*#endregion history*/
+
+/*#region smallDesktop*/
+@media only screen and (max-width: 1200px) {
+  /*#region pageWrapper*/
+  .visit_doors-page-wrapper {
+    padding: 0 60px;
+  }
+  /*#endregion pageWrapper*/
+
+  /*#region breadcrums*/
+  .visit_doors-breadcrumbs {
+    padding: 4px 0 4px 44px;
+    margin-bottom: 40px;
+  }
+
+  .visit_doors-breadcrumbs a {
+    margin-right: 25px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .visit_doors-breadcrumbs a:not(:last-child)::after {
+    display: block;
+    width: 10px;
+    height: 10px;
+    right: -17px;
+    top: 3px;
+  }
+
+  .visit_doors-breadcrumbs a:first-child::before {
+    left: -20px;
+    top: 1px;
+  }
+  /*#endregion breadcrumbs*/
+
+  /*#region mainInfo*/
+  .visit_doors-main-info-photos {
+    margin-right: 35px;
+  }
+
+  .visit_doors-main-info-main-photo-slider-container {
+    height: 240px;
+  }
+
+  .visit_doors-main-info-main-photo-slider-slide img {
+    height: 240px;
+  }
+
+  .visit_doors-main-info-models-slider-container {
+    padding-left: 25px;
+    height: 160px;
+  }
+
+  .visit_doors-main-info-models-slider-slide img {
+    height: 160px;
+  }
+
+  .visit_doors-main-info-photos h2 {
+    font-size: 22px;
+    line-height: 21px;
+  }
+
+  .visit_doors-main-info-photos-interier {
+    column-gap: 10px;
+    row-gap: 5px;
+  }
+
+  .visit_doors-main-info-photos-call {
+    padding: 10px 40px 10px 10px;
+    line-height: 18px;
+  }
+
+  .visit_doors-main-info-photos-call:first-child::after {
+    display: block;
+    width: 30px;
+    height: 30px;
+    content: '';
+    background-image: url('./images/phone.svg');
+    background-size: contain;
+  }
+
+  .visit_doors-main-info-photos-call:last-child::after {
+    display: block;
+    width: 30px;
+    height: 30px;
+    content: '';
+    background-image: url('./images/percent.svg');
+    background-size: contain;
+  }
+  
+  .visit_doors-main-info-photos-call p:first-child {
+    font-size: 16px;
+  }
+  /*#endregion mainInfo*/
+
+  /*#region characteristics*/
+  .visit_doors-main-info-characteristics {
+    max-width: 50%;
+  }
+
+  .visit_doors-main-info-general {
+    max-width: 95%;
+  }
+
+  .visit_doors-main-info-general h1 {
+    font-size: 20px;
+    line-height: 21px;
+  }
+
+  .visit_doors-main-info-general-additional-info {
+    margin-bottom: 12px;
+  }
+
+  .visit_doors-main-info-general-prices-wholesale p:first-child,
+  .visit_doors-main-info-general-prices-retail p:first-child {
+    line-height: 16px;
+  }
+
+  .visit_doors-main-info-general-prices-wholesale p:last-child,
+  .visit_doors-main-info-general-prices-retail p:last-child {
+    font-size: 22px;
+    line-height: 20px;
+  }
+
+  .visit_doors-main-info-general-prices > p {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .visit_doors-main-info-general-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .visit_doors-main-info-general-buttons-counter {
+    margin-right: 0;
+  }
+
+  .visit_doors-main-info-general-buttons-counter-button {
+    width: 100%;
+  }
+
+  .visit_doors-main-info-general-buttons-counter p {
+    font-size: 22px;
+    line-height: 20px;
+  }
+
+  .visit_doors-main-info-general-buttons-buy,
+  .visit_doors-main-info-general-buttons-quickly-buy {
+    line-height: 20px;
+    width: 100%;
+  }
+
+  .visit_doors-main-info-general-buttons-buy {
+    margin-right: 0;
+  }
+
+  .visit_doors-main-info-coatings {
+    height: 700px;
+  }
+
+  .visit_doors-main-info-coatings h2 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .visit_doors-main-info-general-coatings-variants p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .visit_doors-main-info-general-coatings-example {
+    grid-template-columns: repeat(2, 145px);
+    justify-content: center;
+  }
+
+  .visit_doors-main-info-coatings-inputs-label-info-container p {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  /*#endregion characteristics*/
+
+  /*#region decription*/
+  .visit_doors-tab-content-images {
+    width: 85%;
+  }
+
+  .visit_doors-tab-content-images-wrapper img {
+    width: 85%;
+  }
+  /*#endregion description*/
+}
+
+/*#endregion smallDesktop*/
+
+/*#region tablet*/
+@media only screen and (max-width: 768px) {
+  /*#region pageWrapper*/
+  .visit_doors-page-wrapper {
+    padding: 0 40px;
+  }
+  /*#endregion pageWrapper*/
+
+  /*#region breadcrums*/
+  .visit_doors-breadcrumbs {
+    width: 100%;
+  }
+
+  .visit_doors-breadcrumbs a:not(:last-child)::after {
+    display: block;
+    height: 10px;
+    width: 10px;
+    background-image: url('./images/arrow__icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
+  }
+  /*#endregion breadcrumbs*/
+
+  /*#region mainInfo*/
+  .visit_doors-main-info {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .visit_doors-main-info-photos {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .visit_doors-main-info-main-photo-slider-container {
+    height: 290px;
+  }
+
+  .visit_doors-main-info-main-photo-slider-slide img {
+    height: 290px;
+  }
+
+  .visit_doors-main-info-models-slider {
+    margin: 0 0 30px 0;
+  }
+
+  .visit_doors-main-info-photos h2 {
+    font-size: 18px;
+    line-height: 17px;
+  }
+
+  .visit_doors-main-info-photos-links {
+    margin-bottom: 30px;
+  }
+
+  .visit_doors-main-info-photos-call {
+    padding: 10px 50px 10px 10px;
+  }
+  
+  .visit_doors-main-info-photos-call p:first-child {
+    font-size: 12px;
+  }
+
+  /*#endregion mainInfo*/
+
+  /*#region characteristics*/
+  .visit_doors-main-info-characteristics {
+    max-width: 100%;
+  }
+
+  .visit_doors-main-info-general {
+    width: 100%;
+  }
+
+  .visit_doors-main-info-general-coatings-example {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .visit_doors-main-info-coatings {
+    height: 620px;
+  }
+  /*#endregion characteristics*/
+
+  /*#region decription*/
+  .visit_doors-tab-button-tab {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  /*#endregion history*/
+}
+/*#endregion tablet*/
+
+/*#region phone*/
+@media only screen and (max-width: 560px) {
+  /*#region pageWrapper*/
+  .visit_doors-page-wrapper {
+    padding: 0 20px;
+  }
+  /*#endregion pageWrapper*/
+
+  /*#region mainInfo*/
+  .visit_doors-main-info-photos-interier {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  /*#endregion mainInfo*/
+
+  /*#region characteristics*/
+  .visit_doors-main-info-general-coatings-example {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .visit_doors-main-info-coatings {
+    height: 540px;
+  }
+  /*#endregion characteristics*/
+
+  /*#region decription*/
+  .visit_doors-tab-button-tab {
+    padding: 5px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .visit_doors-tab-content {
+    padding: 10px;
+  }
+
+  .visit_doors-tab-content-paragraph h3 {
+    font-size: 16px;
+    line-height: 15px;
+  }
+
+  .visit_doors-tab-content-paragraph h4, p, ul, ol, table {
+    font-size: 12px;
+    line-height: 13px;
+  }
+
+  .visit_doors-tab-content-images {
+    width: 100%;
+  }
+/*#endregion description*/
+
+  /*#region history*/
+  .visit_doors-history-links {
+    margin-bottom: 15px;
+  }
+
+  .visit_doors-history-links a {
+    font-size: 10px;
+    margin-right: 3px;
+  }
+
+  .visit_doors-history-decorator h3 {
+    font-size: 16px;
+  }
+
+  .visit_doors-history-slider-slide {
+    max-width: 230px;
+    padding: 10px;
+  }
+
+  .visit_doors-history-slider-slide h4 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .visit_doors-history-slider-slide-one-price {
+    margin-left: 5px;
+  }
+
+  .visit_doors-history-slider-slide-one-price p:last-child {
+    font-size: 14px;
+  }
+
+  .visit_doors-history-slider-slide-wholesale {
+    margin-left: 5px;
+  }
+
+  .visit_doors-history-slider-slide-wholesale p:last-child {
+    font-size: 14px;
+  }
+  /*#endregion history*/
+}
+/*#endregion phone*/
+
