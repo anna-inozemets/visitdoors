@@ -78,3 +78,19 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
+const types = ['coating', 'knob', 'key'];
+
+types.forEach(type => {
+  const buttons = document.querySelectorAll(`.visit_doors-main-info-general-coatings-radio-${type}`);
+  const items = document.querySelectorAll(`.${type}-item`);
+
+  buttons.forEach(button => {
+    button.addEventListener('change', () => {
+      items.forEach(item => {
+        item.style.border = item.contains(button) 
+          ? '2px solid #00A03B'
+          : '1px solid #E0E0E0';
+      });
+    });
+  });
+});

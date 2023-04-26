@@ -441,6 +441,7 @@ label {
 
 .visit_doors-main-info-general-coatings-example > label {
   border: 1px solid #E0E0E0;
+  cursor: pointer;
 }
 
 .visit_doors-main-info-general-coatings-example input {
