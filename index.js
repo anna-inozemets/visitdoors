@@ -65,6 +65,8 @@ const viewedSlider = {
 
 setupSlider(viewedSlider.container, viewedSlider.slides, viewedSlider.prevButton, viewedSlider.nextButton);
 
+Fancybox.bind("[data-fancybox]", {});
+
 function openTab(evt, tabName) {
   const tabcontent = document.querySelectorAll(".visit_doors-tab-content");
   for (let i = 0; i < tabcontent.length; i++) {
@@ -93,8 +95,4 @@ types.forEach(type => {
       });
     });
   });
-});
-
-Fancybox.bind("[data-fancybox]", {
-  // Your custom options
 });
