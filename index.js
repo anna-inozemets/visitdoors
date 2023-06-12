@@ -94,3 +94,7 @@ types.forEach(type => {
     });
   });
 });
+
+Fancybox.bind("[data-fancybox]", {
+  // Your custom options
+});
